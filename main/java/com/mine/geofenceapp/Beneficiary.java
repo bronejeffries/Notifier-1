@@ -1,6 +1,5 @@
 package com.mine.geofenceapp;
 
-
 public class Beneficiary {
 
     private int id;
