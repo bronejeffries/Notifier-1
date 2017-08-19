@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Notifier</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyD_55_mjcg3Fqbd-mcoUDHUuJ-ZmouEhA0
+    </string>
+    <string name="Details">Details</string>
+    <string name="title_activity_details">details</string>
+    <string name="about">About us</string>
+    <string name="help">Help</string>
+    <string name="add_geofences">Create Geofence</string>
+    <string name="remove_geofences">Clear Geofence</string>
+    <string name="addnote">Add Note</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="hint_id">ID</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="beneficiaryaddress">Reason</string>
+    <string name="beneficiarycountry">Phone Number</string>
+    <string name="register_benef">Register</string>
+    <string name="show_list_benef">List of Registered</string>
+    <string name="error_email_exists">Email Already Exists</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_email">Enter Valid Email</string>
+    <string name="newCtegory">Delete All</string>
+    <string-array name="goefence">
+        <item>create geofence</item>
+        <item>clear geofence</item>
+    </string-array>
+
+</resources>
