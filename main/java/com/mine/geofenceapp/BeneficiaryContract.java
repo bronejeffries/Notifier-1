@@ -2,9 +2,6 @@ package com.mine.geofenceapp;
 
 import android.provider.BaseColumns;
 
-/**
- * Created by delaroy on 5/11/17.
- */
 public class BeneficiaryContract {
 
     public static final class BeneficiaryEntry implements BaseColumns {
