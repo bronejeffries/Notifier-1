@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
-/**
- * Created by delaroy on 5/10/17.
- */
+
 public class InputValidation {
     private Context context;
 
