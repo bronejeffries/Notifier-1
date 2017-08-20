@@ -90,6 +90,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("DELETE FROM " +  BeneficiaryContract.BeneficiaryEntry.TABLE_NAME);
     }
+     public void Delete(String contact){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + BeneficiaryContract.BeneficiaryEntry.TABLE_NAME+"WHERE"+BeneficiaryContract.BeneficiaryEntry.COLUMN_BENEFICIARY_COUNTRY+"='"
+        +contact+"'");
+    }
 
     public boolean checkUser(String email) {
 
