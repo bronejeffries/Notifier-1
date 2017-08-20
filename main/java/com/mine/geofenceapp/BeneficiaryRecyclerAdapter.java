@@ -32,9 +32,11 @@ public class BeneficiaryRecyclerAdapter extends RecyclerView.Adapter<Beneficiary
         public AppCompatTextView textViewAddress;
         public AppCompatTextView textViewCountry;
         public  ImageView overflow;
+         private CardView cardView;
 
         public BeneficiaryViewHolder(View view) {
             super(view);
+             cardView=(CardView) view;
             textViewName = (AppCompatTextView) view.findViewById(R.id.textViewName);
             textViewEmail = (AppCompatTextView) view.findViewById(R.id.textViewEmail);
             textViewAddress = (AppCompatTextView) view.findViewById(R.id.textViewAddress);
@@ -63,7 +65,35 @@ public class BeneficiaryRecyclerAdapter extends RecyclerView.Adapter<Beneficiary
         holder.textViewEmail.setText(listBeneficiary.get(position).getEmail());
         holder.textViewAddress.setText(listBeneficiary.get(position).getAddress());
         holder.textViewCountry.setText(listBeneficiary.get(position).getCountry());
+         holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent intent=new Intent(mContext,SmsActivity.class);
+                intent.putExtra("numbers",holder.textViewCountry.getText().toString());
+                mContext.startActivity(intent);
 
+            }
+        });
+        holder.cardView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                final String del_cont;
+                del_cont= holder.textViewCountry.getText().toString();
+
+                AlertDialog.Builder alertDialogBuilder =new AlertDialog.Builder(mContext);
+                alertDialogBuilder.setCancelable(true).setTitle("DELETE!").setMessage("DO YOU WANT TO CONTINUE")
+                        .setPositiveButton("YES",new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id){
+                                delete(del_cont);
+                            }
+                        });
+                AlertDialog alertDialog=alertDialogBuilder.create();
+                alertDialog.show();
+                return true;
+            }
+        });
+
+    }
 
     }
 
@@ -77,6 +107,10 @@ public class BeneficiaryRecyclerAdapter extends RecyclerView.Adapter<Beneficiary
         listBeneficiary.addAll(newList);
         notifyDataSetChanged();
     }
+public void delete(String contact){
+    databaseHelp.Delete(contact);
+  //  BeneficiaryAct.initObjects();
+}
 
 
 }
